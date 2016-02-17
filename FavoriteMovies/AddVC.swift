@@ -41,7 +41,7 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     
     @IBAction func addMovieTapped(sender: UIButton!) {
         
-        self.navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewControllerAnimated(true)
     }
     
 }

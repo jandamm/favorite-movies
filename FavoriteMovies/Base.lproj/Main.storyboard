@@ -44,8 +44,14 @@
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0M-6g-Vkw">
+                                                    <rect key="frame" x="120" y="37" width="472" height="46"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3G1-6e-LwR">
-                                                    <rect key="frame" x="120" y="37" width="472" height="21"/>
+                                                    <rect key="frame" x="120" y="91" width="472" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="eD4-ys-U6W"/>
                                                     </constraints>
@@ -57,25 +63,19 @@
                                                         <action selector="imdbTapped:" destination="5dp-Ny-HMW" eventType="touchUpInside" id="KS7-Oi-6PU"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x0M-6g-Vkw">
-                                                    <rect key="frame" x="120" y="66" width="472" height="46"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="3G1-6e-LwR" firstAttribute="top" secondItem="x0M-6g-Vkw" secondAttribute="bottom" constant="8" id="0he-1o-J3a"/>
                                                 <constraint firstItem="Z5m-z7-oKv" firstAttribute="centerY" secondItem="CEc-Yi-Qfg" secondAttribute="centerY" id="1Xp-GX-NiM"/>
                                                 <constraint firstItem="3G1-6e-LwR" firstAttribute="leading" secondItem="Z5m-z7-oKv" secondAttribute="trailing" constant="8" id="DWn-lb-RyB"/>
                                                 <constraint firstItem="w4L-Nw-CKm" firstAttribute="leading" secondItem="Z5m-z7-oKv" secondAttribute="trailing" constant="8" id="NBH-IV-EiK"/>
-                                                <constraint firstItem="3G1-6e-LwR" firstAttribute="top" secondItem="w4L-Nw-CKm" secondAttribute="bottom" constant="8" id="Rtc-XT-AWf"/>
+                                                <constraint firstItem="x0M-6g-Vkw" firstAttribute="top" secondItem="w4L-Nw-CKm" secondAttribute="bottom" constant="8" id="WZE-If-P8I"/>
                                                 <constraint firstItem="Z5m-z7-oKv" firstAttribute="leading" secondItem="CEc-Yi-Qfg" secondAttribute="leadingMargin" id="Wak-fU-HE9"/>
                                                 <constraint firstItem="x0M-6g-Vkw" firstAttribute="trailing" secondItem="CEc-Yi-Qfg" secondAttribute="trailingMargin" id="YFL-OR-j9Q"/>
                                                 <constraint firstItem="w4L-Nw-CKm" firstAttribute="top" secondItem="CEc-Yi-Qfg" secondAttribute="topMargin" id="g0t-YR-do3"/>
-                                                <constraint firstItem="x0M-6g-Vkw" firstAttribute="bottom" secondItem="CEc-Yi-Qfg" secondAttribute="bottomMargin" id="gCu-af-6BC"/>
+                                                <constraint firstItem="3G1-6e-LwR" firstAttribute="bottom" secondItem="CEc-Yi-Qfg" secondAttribute="bottomMargin" id="gZc-Oq-bkI"/>
                                                 <constraint firstItem="Z5m-z7-oKv" firstAttribute="bottom" secondItem="CEc-Yi-Qfg" secondAttribute="bottomMargin" id="mDJ-wB-xQs"/>
                                                 <constraint firstItem="Z5m-z7-oKv" firstAttribute="top" secondItem="CEc-Yi-Qfg" secondAttribute="topMargin" id="nrZ-lD-PDP"/>
-                                                <constraint firstItem="x0M-6g-Vkw" firstAttribute="top" secondItem="3G1-6e-LwR" secondAttribute="bottom" constant="8" id="ntK-Yq-FdJ"/>
                                                 <constraint firstItem="x0M-6g-Vkw" firstAttribute="leading" secondItem="Z5m-z7-oKv" secondAttribute="trailing" constant="8" id="oOP-Vc-GDq"/>
                                                 <constraint firstItem="w4L-Nw-CKm" firstAttribute="trailing" secondItem="CEc-Yi-Qfg" secondAttribute="trailingMargin" id="vSl-qP-qni"/>
                                                 <constraint firstItem="3G1-6e-LwR" firstAttribute="trailing" secondItem="CEc-Yi-Qfg" secondAttribute="trailingMargin" id="ykl-M8-l84"/>
@@ -131,6 +131,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3A-rY-jIq">
                                         <rect key="frame" x="180" y="0.0" width="200" height="200"/>
                                         <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Sc-xY-oYo" customClass="RoundedImage" customModule="FavoriteMovies" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqY-hR-Uhc">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                                 <state key="normal" title="Add Image">
@@ -140,9 +143,6 @@
                                                     <action selector="addImgTapped:" destination="AtG-RO-f0R" eventType="touchUpInside" id="29O-DY-C1E"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Sc-xY-oYo" customClass="RoundedImage" customModule="FavoriteMovies" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -226,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xV4-7C-nJo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1991" y="363"/>
+            <point key="canvasLocation" x="1919" y="350"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AOf-lJ-Bc0">
@@ -236,7 +236,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gpc-87-hfa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="1" green="0.78003065689999995" blue="0.18206881180000001" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
