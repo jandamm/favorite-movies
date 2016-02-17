@@ -9,11 +9,13 @@ An App storing favorite movies and saving them to CoreData.
 - You can choose between NSUserDefaults or Core Data to store your data
 - Submit the finished app to Github
 - Make sure to use colors and style your app
+
 ####The details view controller:
 - Will show a bigger image of your favorite movie, your title, your description, the imdb link, and an additional field that shows the plot of the movie as provided by IMDB
 - Will have a back button
 - The fields on this screen are not editable
 - There will be an "Add" or "+" button on the main screen that allows you to add a new favorite movie
+
 ####The new favorite movie screen/view controller:
 - Will allow the user to enter a title, a description, the IMDB url, the IMDB plot description, and an image
 - It will have a save button to save the movie
