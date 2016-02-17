@@ -9,11 +9,22 @@
 import UIKit
 
 class MovieCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
+    
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var reasonLbl: UILabel!
+    
+    private var _link: String?
+    
+    func initializeCell(favMovie: Movie) {
+        _link = favMovie.imdbLink
+        titleLbl.text = favMovie.title
+        reasonLbl.text = favMovie.reason
+        imgView.image = favMovie.getImage()
     }
     
-
+    @IBAction func imdbTapped(sender: UIButton!) {
+        print("imdbTapped: \(_link)")
+    }
+    
 }

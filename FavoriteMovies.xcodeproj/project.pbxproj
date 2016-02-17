@@ -18,6 +18,8 @@
 		13EC88581C7500910014F125 /* DetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13EC88561C7500910014F125 /* DetailVC.xib */; };
 		13EC885A1C7500E70014F125 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC88591C7500E70014F125 /* MovieCell.swift */; };
 		13EC885C1C75012E0014F125 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC885B1C75012E0014F125 /* RoundedImage.swift */; };
+		13EC88601C7505B80014F125 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC885E1C7505B80014F125 /* Movie+CoreDataProperties.swift */; };
+		13EC88611C7505B80014F125 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC885F1C7505B80014F125 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		13EC88561C7500910014F125 /* DetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailVC.xib; sourceTree = "<group>"; };
 		13EC88591C7500E70014F125 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		13EC885B1C75012E0014F125 /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
+		13EC885E1C7505B80014F125 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Movie+CoreDataProperties.swift"; path = "../Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		13EC885F1C7505B80014F125 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = ../Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 		13EC88521C74C40B0014F125 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				13EC885E1C7505B80014F125 /* Movie+CoreDataProperties.swift */,
+				13EC885F1C7505B80014F125 /* Movie.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -189,8 +195,10 @@
 			files = (
 				13EC88571C7500910014F125 /* DetailVC.swift in Sources */,
 				13EC88541C74FFA60014F125 /* AddVC.swift in Sources */,
+				13EC88611C7505B80014F125 /* Movie.swift in Sources */,
 				13EC885C1C75012E0014F125 /* RoundedImage.swift in Sources */,
 				13EC885A1C7500E70014F125 /* MovieCell.swift in Sources */,
+				13EC88601C7505B80014F125 /* Movie+CoreDataProperties.swift in Sources */,
 				13BA17A21C74BE1700236BBE /* FavoriteMovies.xcdatamodeld in Sources */,
 				13BA179C1C74BE1700236BBE /* MenuVC.swift in Sources */,
 				13BA179A1C74BE1700236BBE /* AppDelegate.swift in Sources */,
