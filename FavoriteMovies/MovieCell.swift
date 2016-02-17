@@ -14,7 +14,7 @@ class MovieCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var reasonLbl: UILabel!
     
-    private var _link: String?
+    private var _link: String!
     
     func initializeCell(favMovie: Movie) {
         _link = favMovie.imdbLink
@@ -24,7 +24,7 @@ class MovieCell: UITableViewCell {
     }
     
     @IBAction func imdbTapped(sender: UIButton!) {
-        print("imdbTapped: \(_link)")
+        NSNotificationCenter.defaultCenter().postNotificationName("imdbTapped", object: nil, userInfo: ["link": _link])
     }
     
 }

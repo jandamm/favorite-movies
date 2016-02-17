@@ -13,11 +13,24 @@ import UIKit
 
 class Movie: NSManagedObject {
 
-    var imdbLink: String? {
-        return imdb
+    var imdbLink: String {
+        guard let number = imdb else {
+            return "http://www.imdb.com/"
+        }
+        
+        return "http://www.imdb.com/title/\(number)/"
     }
     
     func getImage() -> UIImage? {
-        return nil
+        guard let data = image else {
+            return nil
+        }
+        
+        return UIImage(data: data)
+    }
+    
+    func saveImage(img: UIImage) {
+        let imgData = UIImagePNGRepresentation(img)
+        image = imgData
     }
 }

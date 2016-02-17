@@ -15,13 +15,26 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        CoreDataService.inst.fetchData()
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openWebView:", name: "imdbTapped", object: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+    }
+    
+    func openWebView(s: NSNotification) {
+        guard let info = s.userInfo as? Dictionary <String, String>, let link = info["link"] else {
+            print("No link provided")
+            return
+        }
+        
+        print(link)
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -29,11 +42,18 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return CoreDataService.inst.movies.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell") as? MovieCell else {
+            return MovieCell()
+        }
+        
+        let movie = CoreDataService.inst.movies[indexPath.row]
+        cell.initializeCell(movie)
+        
+        return cell
     }
     
 }

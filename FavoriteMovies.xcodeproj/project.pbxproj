@@ -20,6 +20,7 @@
 		13EC885C1C75012E0014F125 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC885B1C75012E0014F125 /* RoundedImage.swift */; };
 		13EC88601C7505B80014F125 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC885E1C7505B80014F125 /* Movie+CoreDataProperties.swift */; };
 		13EC88611C7505B80014F125 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC885F1C7505B80014F125 /* Movie.swift */; };
+		13EC88631C750F1A0014F125 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13EC88621C750F1A0014F125 /* CoreDataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		13EC885B1C75012E0014F125 /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
 		13EC885E1C7505B80014F125 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Movie+CoreDataProperties.swift"; path = "../Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		13EC885F1C7505B80014F125 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movie.swift; path = ../Movie.swift; sourceTree = "<group>"; };
+		13EC88621C750F1A0014F125 /* CoreDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		13EC885D1C7503500014F125 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				13EC88621C750F1A0014F125 /* CoreDataService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			files = (
 				13EC88571C7500910014F125 /* DetailVC.swift in Sources */,
 				13EC88541C74FFA60014F125 /* AddVC.swift in Sources */,
+				13EC88631C750F1A0014F125 /* CoreDataService.swift in Sources */,
 				13EC88611C7505B80014F125 /* Movie.swift in Sources */,
 				13EC885C1C75012E0014F125 /* RoundedImage.swift in Sources */,
 				13EC885A1C7500E70014F125 /* MovieCell.swift in Sources */,
