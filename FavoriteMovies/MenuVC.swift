@@ -15,6 +15,8 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setLogo()
+        
         CoreDataService.inst.fetchData()
         
         tableView.delegate = self

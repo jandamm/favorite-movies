@@ -21,6 +21,8 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setLogo()
     }
     
     override func viewDidAppear(animated: Bool) {
