@@ -44,6 +44,13 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.reloadData()
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let movie = CoreDataService.inst.movies[indexPath.row]
+        let view = DetailVC(movie: movie)
+        
+        presentViewController(view, animated: true, completion: nil)
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
