@@ -21,7 +21,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="120" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q6U-BS-E6v">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MovieCell" id="5dp-Ny-HMW" customClass="MovieCell" customModule="FavoriteMovies" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="92" width="600" height="120"/>
@@ -125,10 +125,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mlq-T3-bhy">
-                                <rect key="frame" x="20" y="84" width="560" height="358"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="mlq-T3-bhy">
+                                <rect key="frame" x="20" y="84" width="560" height="368"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3A-rY-jIq">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3A-rY-jIq" customClass="RoundedImage" customModule="FavoriteMovies" customModuleProvider="target">
                                         <rect key="frame" x="180" y="0.0" width="200" height="200"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Sc-xY-oYo" customClass="RoundedImage" customModule="FavoriteMovies" customModuleProvider="target">
@@ -136,8 +136,9 @@
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqY-hR-Uhc">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="Add Image">
-                                                    <color key="titleColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="addImgTapped:" destination="AtG-RO-f0R" eventType="touchUpInside" id="29O-DY-C1E"/>
@@ -158,50 +159,52 @@
                                             <constraint firstItem="8Sc-xY-oYo" firstAttribute="top" secondItem="f3A-rY-jIq" secondAttribute="top" id="sNk-Jh-KUp"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rf6-5L-zpO">
-                                        <rect key="frame" x="0.0" y="208" width="560" height="150"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sek-Vn-pYr">
-                                                <rect key="frame" x="0.0" y="0.0" width="560" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="lYh-o2-WqO"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="imdb number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R5h-h2-3eM">
-                                                <rect key="frame" x="0.0" y="40" width="560" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="36C-b8-FN5"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="plot" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgX-jt-44a">
-                                                <rect key="frame" x="0.0" y="80" width="560" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="mme-sH-4C2"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="reason for liking the movie" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbA-JE-bxe">
-                                                <rect key="frame" x="0.0" y="120" width="560" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="pU9-JI-sFt"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </subviews>
-                                    </stackView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sek-Vn-pYr">
+                                        <rect key="frame" x="0.0" y="212" width="560" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="lYh-o2-WqO"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="imdb number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R5h-h2-3eM">
+                                        <rect key="frame" x="0.0" y="254" width="560" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="36C-b8-FN5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="plot" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgX-jt-44a">
+                                        <rect key="frame" x="0.0" y="296" width="560" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="mme-sH-4C2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="reason for liking the movie" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbA-JE-bxe">
+                                        <rect key="frame" x="0.0" y="338" width="560" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="pU9-JI-sFt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="rf6-5L-zpO" firstAttribute="width" secondItem="mlq-T3-bhy" secondAttribute="width" id="m8P-Gv-HdA"/>
+                                    <constraint firstItem="sek-Vn-pYr" firstAttribute="leading" secondItem="mlq-T3-bhy" secondAttribute="leading" id="BdY-5R-Ecs"/>
+                                    <constraint firstAttribute="trailing" secondItem="YgX-jt-44a" secondAttribute="trailing" id="GoA-M9-PSk"/>
+                                    <constraint firstAttribute="trailing" secondItem="R5h-h2-3eM" secondAttribute="trailing" id="Gxh-3x-Jpv"/>
+                                    <constraint firstItem="dbA-JE-bxe" firstAttribute="leading" secondItem="mlq-T3-bhy" secondAttribute="leading" id="HJC-35-anF"/>
+                                    <constraint firstAttribute="trailing" secondItem="dbA-JE-bxe" secondAttribute="trailing" id="Ixt-VI-hSg"/>
+                                    <constraint firstItem="YgX-jt-44a" firstAttribute="leading" secondItem="mlq-T3-bhy" secondAttribute="leading" id="ZJn-mm-wRi"/>
+                                    <constraint firstItem="R5h-h2-3eM" firstAttribute="leading" secondItem="mlq-T3-bhy" secondAttribute="leading" id="kbc-Xt-f1P"/>
+                                    <constraint firstAttribute="trailing" secondItem="sek-Vn-pYr" secondAttribute="trailing" id="mz3-Kf-LWC"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="mlq-T3-bhy" secondAttribute="trailing" id="5U5-JA-ZWG"/>
                             <constraint firstItem="mlq-T3-bhy" firstAttribute="leading" secondItem="wfy-pD-B6t" secondAttribute="leadingMargin" id="b2W-Ed-Fxf"/>
