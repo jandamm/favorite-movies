@@ -42,10 +42,33 @@ class CoreDataService {
         }
     }
     
-    func saveData(img: UIImage, title: String, imdb: String, plot: String, reason: String) {
+    func saveData(img: UIImage, title: String, imdb: String, plot: String, reason: String) -> Bool {
+        guard let entity = NSEntityDescription.entityForName("Movie", inManagedObjectContext: MOC) else {
+            print("Could not create entity")
+            return false
+        }
+        let newMovie = Movie(entity: entity, insertIntoManagedObjectContext: MOC)
         
+        newMovie.saveImage(img)
+        newMovie.title = title
+        newMovie.imdb = imdb
+        newMovie.plot = plot
+        newMovie.reason = reason
+        
+        MOC.insertObject(newMovie)
+        
+        do {
+            try MOC.save()
+        } catch {
+            print("Couldn't save to CoreData")
+            return false
+        }
         
         fetchData()
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("reloadData", object: nil)
+        
+        return true
     }
     
 

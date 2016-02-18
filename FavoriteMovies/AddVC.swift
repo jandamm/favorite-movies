@@ -40,8 +40,15 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     }
     
     @IBAction func addMovieTapped(sender: UIButton!) {
+        guard let img = imgView.image, let title = titleTxt.text, let imdb = imdbTxt.text, let plot = plotTxt.text, let reason = reasonTxt.text else {
+            return
+        }
         
-        navigationController?.popViewControllerAnimated(true)
+        let saved = CoreDataService.inst.saveData(img, title: title, imdb: imdb, plot: plot, reason: reason)
+        
+        if saved {
+            navigationController?.popViewControllerAnimated(true)
+        }
     }
     
 }

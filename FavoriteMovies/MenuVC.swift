@@ -21,6 +21,7 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.dataSource = self
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "openWebView:", name: "imdbTapped", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTableView", name: "reloadData", object: nil)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -28,15 +29,19 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         
     }
     
-    func openWebView(s: NSNotification) {
-        guard let info = s.userInfo as? Dictionary <String, String>, let link = info["link"] else {
+    func openWebView(notif: NSNotification) {
+        guard let info = notif.userInfo as? Dictionary <String, String>, let link = info["link"] else {
             print("No link provided")
             return
         }
         
         print(link)
     }
-
+    
+    func reloadTableView() {
+        tableView.reloadData()
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
