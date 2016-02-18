@@ -26,11 +26,15 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
         titleTxt.becomeFirstResponder()
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         imgView.image = image
+        imgBtn.setTitle("", forState: .Normal)
+        
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -38,7 +42,6 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         presentViewController(imagePicker, animated: true, completion: nil)
-        imgBtn.setTitle("", forState: .Normal)
     }
     
     @IBAction func addMovieTapped(sender: UIButton!) {

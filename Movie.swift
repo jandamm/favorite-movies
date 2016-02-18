@@ -14,11 +14,11 @@ import UIKit
 class Movie: NSManagedObject {
 
     var imdbLink: String {
-        guard let number = imdb else {
+        guard let id = imdb else {
             return "http://www.imdb.com/"
         }
         
-        return "http://www.imdb.com/title/\(number)/"
+        return "http://www.imdb.com/title/\(id)/"
     }
     
     func getImage() -> UIImage? {

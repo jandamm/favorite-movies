@@ -40,10 +40,10 @@ class ImdbVC: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        _webView.frame = CGRectMake(0, 0, webFrame.bounds.width, webFrame.bounds.height)
+        
         let url = NSURL(string: _link)!
         let request = NSURLRequest(URL: url)
-        
-        _webView.frame = CGRectMake(0, 0, webFrame.bounds.width, webFrame.bounds.height)
         
         _webView.loadRequest(request)
     }

@@ -6,7 +6,6 @@
 //  Copyright © 2016 Jan Dammshäuser. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 extension UIViewController {
