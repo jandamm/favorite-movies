@@ -45,7 +45,9 @@ class DetailVC: UIViewController {
     }
     
     @IBAction func imdbTapped(sender: UIButton!) {
-        print(_movie.imdbLink)
+        let view = ImdbVC(link: _movie.imdbLink)
+        
+        presentViewController(view, animated: true, completion: nil)
     }
     
 }

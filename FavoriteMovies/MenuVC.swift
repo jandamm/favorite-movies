@@ -37,7 +37,9 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
             return
         }
         
-        print(link)
+        let view = ImdbVC(link: link)
+        
+        presentViewController(view, animated: true, completion: nil)
     }
     
     func reloadTableView() {
