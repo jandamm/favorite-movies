@@ -125,17 +125,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="mlq-T3-bhy">
-                                <rect key="frame" x="20" y="84" width="560" height="368"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="mlq-T3-bhy">
+                                <rect key="frame" x="20" y="84" width="560" height="250"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3A-rY-jIq" customClass="RoundedImage" customModule="FavoriteMovies" customModuleProvider="target">
-                                        <rect key="frame" x="180" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="231" y="0.0" width="98" height="98"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Sc-xY-oYo" customClass="RoundedImage" customModule="FavoriteMovies" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="98"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqY-hR-Uhc">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="98" height="98"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <state key="normal" title="Add Image">
                                                     <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,20 +147,19 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="XqY-hR-Uhc" firstAttribute="width" secondItem="8Sc-xY-oYo" secondAttribute="width" id="1ui-Ts-o9J"/>
-                                            <constraint firstAttribute="bottom" secondItem="8Sc-xY-oYo" secondAttribute="bottom" id="5RC-oP-9tX"/>
-                                            <constraint firstItem="8Sc-xY-oYo" firstAttribute="leading" secondItem="f3A-rY-jIq" secondAttribute="leading" id="AcL-Kv-Iox"/>
-                                            <constraint firstAttribute="width" constant="200" id="Fdy-dc-0Sc"/>
-                                            <constraint firstItem="XqY-hR-Uhc" firstAttribute="centerX" secondItem="8Sc-xY-oYo" secondAttribute="centerX" id="NYA-dR-Eby"/>
-                                            <constraint firstItem="XqY-hR-Uhc" firstAttribute="height" secondItem="8Sc-xY-oYo" secondAttribute="height" id="PAb-ZX-uzn"/>
-                                            <constraint firstItem="XqY-hR-Uhc" firstAttribute="centerY" secondItem="8Sc-xY-oYo" secondAttribute="centerY" id="ee1-FJ-JG1"/>
+                                            <constraint firstItem="XqY-hR-Uhc" firstAttribute="top" secondItem="f3A-rY-jIq" secondAttribute="top" id="3Nz-c2-Kvr"/>
+                                            <constraint firstAttribute="bottom" secondItem="8Sc-xY-oYo" secondAttribute="bottom" id="5Fg-9g-cHY"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Sc-xY-oYo" secondAttribute="trailing" id="Dvf-Sa-Wwu"/>
+                                            <constraint firstItem="8Sc-xY-oYo" firstAttribute="top" secondItem="f3A-rY-jIq" secondAttribute="top" id="MGw-RA-Bf0"/>
+                                            <constraint firstAttribute="trailing" secondItem="XqY-hR-Uhc" secondAttribute="trailing" id="OgZ-uu-VYo"/>
                                             <constraint firstAttribute="width" secondItem="f3A-rY-jIq" secondAttribute="height" multiplier="1:1" id="hOs-Ey-UsG"/>
-                                            <constraint firstAttribute="trailing" secondItem="8Sc-xY-oYo" secondAttribute="trailing" id="jhd-ga-V4K"/>
-                                            <constraint firstItem="8Sc-xY-oYo" firstAttribute="top" secondItem="f3A-rY-jIq" secondAttribute="top" id="sNk-Jh-KUp"/>
+                                            <constraint firstItem="XqY-hR-Uhc" firstAttribute="leading" secondItem="f3A-rY-jIq" secondAttribute="leading" id="jnS-kr-b5p"/>
+                                            <constraint firstAttribute="bottom" secondItem="XqY-hR-Uhc" secondAttribute="bottom" id="n1e-J6-kdk"/>
+                                            <constraint firstItem="8Sc-xY-oYo" firstAttribute="leading" secondItem="f3A-rY-jIq" secondAttribute="leading" id="rlC-Tu-3sd"/>
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sek-Vn-pYr">
-                                        <rect key="frame" x="0.0" y="212" width="560" height="30"/>
+                                        <rect key="frame" x="0.0" y="106" width="560" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="lYh-o2-WqO"/>
                                         </constraints>
@@ -168,7 +167,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="imdb number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R5h-h2-3eM">
-                                        <rect key="frame" x="0.0" y="254" width="560" height="30"/>
+                                        <rect key="frame" x="0.0" y="144" width="560" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="36C-b8-FN5"/>
                                         </constraints>
@@ -176,7 +175,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="plot" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YgX-jt-44a">
-                                        <rect key="frame" x="0.0" y="296" width="560" height="30"/>
+                                        <rect key="frame" x="0.0" y="182" width="560" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="mme-sH-4C2"/>
                                         </constraints>
@@ -184,7 +183,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="reason for liking the movie" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dbA-JE-bxe">
-                                        <rect key="frame" x="0.0" y="338" width="560" height="30"/>
+                                        <rect key="frame" x="0.0" y="220" width="560" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="pU9-JI-sFt"/>
                                         </constraints>
@@ -207,6 +206,7 @@
                         <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="mlq-T3-bhy" secondAttribute="trailing" id="5U5-JA-ZWG"/>
+                            <constraint firstItem="neW-oz-zIJ" firstAttribute="top" secondItem="mlq-T3-bhy" secondAttribute="bottom" constant="266" id="LQQ-jX-XiK"/>
                             <constraint firstItem="mlq-T3-bhy" firstAttribute="leading" secondItem="wfy-pD-B6t" secondAttribute="leadingMargin" id="b2W-Ed-Fxf"/>
                             <constraint firstItem="mlq-T3-bhy" firstAttribute="top" secondItem="yst-LC-Ws8" secondAttribute="bottom" constant="20" id="cjm-6g-BjC"/>
                         </constraints>
