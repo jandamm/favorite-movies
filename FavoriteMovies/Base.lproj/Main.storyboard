@@ -131,7 +131,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f3A-rY-jIq" customClass="RoundedImage" customModule="FavoriteMovies" customModuleProvider="target">
                                         <rect key="frame" x="180" y="0.0" width="200" height="200"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Sc-xY-oYo" customClass="RoundedImage" customModule="FavoriteMovies" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Sc-xY-oYo" customClass="RoundedImage" customModule="FavoriteMovies" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqY-hR-Uhc">

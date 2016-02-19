@@ -45,7 +45,7 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     }
     
     @IBAction func addMovieTapped(sender: UIButton!) {
-        guard let img = imgView.image, let title = titleTxt.text, let imdb = imdbTxt.text, let plot = plotTxt.text, let reason = reasonTxt.text else {
+        guard let img = imgView.image, let title = titleTxt.text where title != "", let imdb = imdbTxt.text where imdb != "", let plot = plotTxt.text where plot != "", let reason = reasonTxt.text where reason != "" else {
             return
         }
         

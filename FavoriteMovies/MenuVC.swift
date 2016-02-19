@@ -46,6 +46,10 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.reloadData()
     }
     
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        CoreDataService.inst.deleteData(indexPath.row)
+    }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let movie = CoreDataService.inst.movies[indexPath.row]
         let view = DetailVC(movie: movie)
