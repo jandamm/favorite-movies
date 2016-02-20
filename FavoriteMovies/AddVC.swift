@@ -18,9 +18,20 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     @IBOutlet weak var reasonTxt: UITextField!
     
     private var imagePicker: UIImagePickerController!
+    
+    var movie: Movie?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let mov = movie {
+            imgView.image = mov.getImage()
+            titleTxt.text = mov.title
+            imdbTxt.text = mov.imdb
+            plotTxt.text = mov.plot
+            reasonTxt.text = mov.reason
+            clearImgBtnTitle()
+        }
         
         setLogo()
     }
@@ -33,9 +44,13 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         imgView.image = image
-        imgBtn.setTitle("", forState: .Normal)
+        clearImgBtnTitle()
         
         imagePicker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    private func clearImgBtnTitle() {
+        imgBtn.setTitle("", forState: .Normal)
     }
     
     @IBAction func addImgTapped(sender: UIButton!) {
@@ -49,7 +64,7 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
             return
         }
         
-        let saved = CoreDataService.inst.saveData(img, title: title, imdb: imdb, plot: plot, reason: reason)
+        let saved = CoreDataService.inst.saveData(img, title: title, imdb: imdb, plot: plot, reason: reason, movie: movie)
         
         if saved {
             navigationController?.popViewControllerAnimated(true)

@@ -46,8 +46,21 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.reloadData()
     }
     
-    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        CoreDataService.inst.deleteData(indexPath.row)
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        let editAction = UITableViewRowAction(style: .Default, title: "Edit") { (UITableViewRowAction, indexPath: NSIndexPath) -> Void in
+            let movie = CoreDataService.inst.movies[indexPath.row]
+            self.performSegueWithIdentifier("AddVC", sender: movie)
+        }
+        
+        let deleteAction = UITableViewRowAction(style: .Default, title: "Delete") { (UITableViewRowAction, indexPath: NSIndexPath) -> Void in
+            CoreDataService.inst.deleteData(indexPath.row)
+        }
+        
+        editAction.backgroundColor = UIColor.grayColor()
+        deleteAction.backgroundColor = UIColor.darkGrayColor()
+        
+        return [deleteAction, editAction]
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -74,6 +87,14 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         cell.initializeCell(movie)
         
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let send = sender as? Movie where segue.identifier == "AddVC" {
+            if let addVC = segue.destinationViewController as? AddVC {
+                addVC.movie = send
+            }
+        }
     }
     
 }

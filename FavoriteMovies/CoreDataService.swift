@@ -47,27 +47,34 @@ class CoreDataService {
         
         MOC.deleteObject(item)
         
-        saveMOC()
+        guard saveMOC() else {
+            return
+        }
         
         fetchData()
         
         reloadNotif()
     }
     
-    func saveData(img: UIImage, title: String, imdb: String, plot: String, reason: String) -> Bool {
+    func saveData(img: UIImage, title: String, imdb: String, plot: String, reason: String, movie: Movie?) -> Bool {
         guard let entity = NSEntityDescription.entityForName("Movie", inManagedObjectContext: MOC) else {
             print("Could not create entity")
             return false
         }
-        let newMovie = Movie(entity: entity, insertIntoManagedObjectContext: MOC)
         
-        newMovie.saveImage(img)
-        newMovie.title = title
-        newMovie.imdb = imdb
-        newMovie.plot = plot
-        newMovie.reason = reason
+        let newMovie = movie == nil
         
-        MOC.insertObject(newMovie)
+        let mov = newMovie ? Movie(entity: entity, insertIntoManagedObjectContext: MOC) : movie!
+        
+        mov.saveImage(img)
+        mov.title = title
+        mov.imdb = imdb
+        mov.plot = plot
+        mov.reason = reason
+        
+        if newMovie {
+            MOC.insertObject(mov)
+        }
         
         guard saveMOC() else {
             return false

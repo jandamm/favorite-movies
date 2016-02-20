@@ -101,7 +101,7 @@
                     <navigationItem key="navigationItem" id="yZ8-Ag-fHI">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="POq-Lm-NSp">
                             <connections>
-                                <segue destination="AtG-RO-f0R" kind="show" id="m3e-kY-0aj"/>
+                                <segue destination="AtG-RO-f0R" kind="show" identifier="AddVC" id="m3e-kY-0aj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
