@@ -22,8 +22,8 @@ class MenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.delegate = self
         tableView.dataSource = self
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openWebView:", name: "imdbTapped", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTableView", name: "reloadData", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MenuVC.openWebView(_:)), name: "imdbTapped", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MenuVC.reloadTableView), name: "reloadData", object: nil)
     }
     
     override func viewWillAppear(animated: Bool) {
