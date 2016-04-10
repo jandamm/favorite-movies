@@ -6,7 +6,6 @@
 //  Copyright © 2016 Jan Dammshäuser. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import CoreData
 
@@ -56,24 +55,25 @@ class CoreDataService {
         reloadNotif()
     }
     
-    func saveData(img: UIImage, title: String, imdb: String, plot: String, reason: String, movie: Movie?) -> Bool {
+    func saveData(item: Movie?, img: UIImage, title: String, imdb: String, plot: String, reason: String) -> Bool {
+        
         guard let entity = NSEntityDescription.entityForName("Movie", inManagedObjectContext: MOC) else {
             print("Could not create entity")
             return false
         }
         
-        let newMovie = movie == nil
+        let newItem = item == nil
         
-        let mov = newMovie ? Movie(entity: entity, insertIntoManagedObjectContext: MOC) : movie!
+        let item = newItem ? Movie(entity: entity, insertIntoManagedObjectContext: MOC) : item!
         
-        mov.saveImage(img)
-        mov.title = title
-        mov.imdb = imdb
-        mov.plot = plot
-        mov.reason = reason
+        item.saveImage(img)
+        item.title = title
+        item.imdb = imdb
+        item.plot = plot
+        item.reason = reason
         
-        if newMovie {
-            MOC.insertObject(mov)
+        if newItem {
+            MOC.insertObject(item)
         }
         
         guard saveMOC() else {

@@ -64,7 +64,7 @@ class AddVC: UIViewController, UIImagePickerControllerDelegate, UINavigationCont
             return
         }
         
-        let saved = CoreDataService.inst.saveData(img, title: title, imdb: imdb, plot: plot, reason: reason, movie: movie)
+        let saved = CoreDataService.inst.saveData(movie, img: img, title: title, imdb: imdb, plot: plot, reason: reason)
         
         if saved {
             navigationController?.popViewControllerAnimated(true)

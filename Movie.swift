@@ -6,10 +6,8 @@
 //  Copyright © 2016 Jan Dammshäuser. All rights reserved.
 //
 
-import Foundation
-import CoreData
 import UIKit
-
+import CoreData
 
 class Movie: NSManagedObject {
 
